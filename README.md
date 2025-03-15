@@ -16,7 +16,6 @@ $ swift build
 ### Running
 ```console
 $ swift run
-$ swift run
 Building for debugging...
 [1/1] Write swift-version--58304C5D6DBC2206.txt
 Build of product 'LlamaMacos' complete! (0.10s)
