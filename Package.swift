@@ -29,8 +29,9 @@ let package = Package(
             ),
         .binaryTarget(
             name: "LlamaFramework",
-            url: "https://github.com/ggml-org/llama.cpp/releases/download/b4829/llama-b4829-xcframework.zip",
-            checksum: "a65b66a60c21d1c551bec9bb374190f3725f8f6b5466292b46556a7e264e12f6"
+            //url: "https://github.com/ggml-org/llama.cpp/releases/download/b4829/llama-b4829-xcframework.zip",
+            //checksum: "a65b66a60c21d1c551bec9bb374190f3725f8f6b5466292b46556a7e264e12f6"
+            path: "../../../work/ai/llama.cpp/build-apple/llama.xcframework"
         )
     ]
 )
