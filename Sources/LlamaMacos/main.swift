@@ -1,6 +1,9 @@
 import Foundation
 import llama
 
+// Used to verify that mtmd symbols are availabe and working correctly.
+import MTMDShim
+
 enum LlamaError: Error {
     case couldNotLoadModel
 }
@@ -55,5 +58,14 @@ if let cString = llama_sampler_name(sampler) {
     print("No sampler name available")
 }
 
+let pos = mtmd_decoder_pos(t: 1, x: 2, y: 3, z: 4)
+print("MTMD pos.x: \(pos.x), pos.y: \(pos.y), pos.z: \(pos.z)")
+
+if let markerPtr = mtmd_default_marker() {
+    let marker = String(cString: markerPtr)
+    print("Default MTMD marker: \(marker)")
+} else {
+    print("Failed to get MTMD marker")
+}
 
 llama_model_free(model)

@@ -12,7 +12,8 @@ let package = Package(
         .executableTarget(
             name: "LlamaMacos",
             dependencies: [
-                "LlamaFramework"
+                "LlamaFramework",
+                "MTMDShim"
             ],
             swiftSettings: [
                 .define("DEBUG")
@@ -27,6 +28,11 @@ let package = Package(
                 //])
             ]
             ),
+        // add a module for the mtmd shim
+        .target(
+            name: "MTMDShim",
+            dependencies: ["LlamaFramework"]
+        ),
         .binaryTarget(
             name: "LlamaFramework",
             //url: "https://github.com/ggml-org/llama.cpp/releases/download/b4829/llama-b4829-xcframework.zip",
